@@ -1,278 +1,395 @@
-
+/*
+Vamos a crear un programa que se encargue de realizar las siguientes operaciones
+1.- Bono o descuento por edad
+2.- Convertir numeros decimales a binarios
+3.- Convertir temperaturas celcius, kelvine y rankine
+4.- Numero de positivos y negativos segun una lista de numeros
+5.- Tiendita peke
+6.- Area y Perimetro de figuras geometricas
+7.- Tabla
+8.- Factorial
+9.- Dibujitos de codigo
+10.- Figuras huecas de codigo
+11.- Patrones de codigos
+12.- Diamante de codigo
+13.- Calculadora
+14.- Salir
+*/ 
 
 import java.util.Scanner;
 
+class EstructuradeDatos{
 
-public class Ejercicios{
+    //Programa 1
     /*
-    vamos a hacer un ejemplo donde tengamos un menu con 4 opciones:
+    EL PROGRAMA DEBE SOLICITAR LA EDAD DEL USUARIO. SI ÉSTA ES MAYOR DE 65, 
+    AL PRECIO DEL ABONO SE LE APLICA UN DESCUENTO DEL 40%. 
+    SI LA EDAD ES MENOR QUE 21, SE PREGUNTA AL USUARIO SI SUS PADRES SON 
+    SOCIOS. SI LA RESPUESTA ES AFIRMATIVA, SE LES APLICA UN DESCUENTO DEL 
+    45%; EN CASO CONTRARIO, SE LES APLICA UN 25%. 
+    variable edad
+    condiciones
+    */ 
 
-    1.- es una calculadora
-    2.- conversion de unidades
-    3.-creacion de cuadros
-    4.-Movimiento en cuadro
+    public static void main(String[] args){
 
-    */
-
-
-    Scanner entrada = new Scanner(System.in);
-
-    char op;
-
-    //metodos propios de la clase
-    //un metodo es una operacion o una accion que puede realizar una clase
-
-    public void menu(){
-        //menu del programa
+        //objetos
+        Scanner entrada = new Scanner(System.in);
+        //Scanner letras = new Scanner(System.in);
 
 
-        System.out.println("Ejercicios por yo, elija una opcion deseada: ");
-        System.out.println("a.- Calculadora");
-        System.out.println("b.- Conversion de unidades");
-        System.out.println("c.- Creacion de cuadros");
-        System.out.println("d.- Movimiento en cuadro");
-        System.out.println("Cualquier otra opcion sale del programa");
-
-        op = entrada.next().charAt(0);
-
-        //la estrutura que se necesita es:
-
-        switch(op){
-            case 'a':
-                //implementar metodos independientes para casa opcion
-                Ejercicio1();
-                break;
-
-            case 'b':
-                Ejercicio2();
-                break;
-            
-            case 'c':
-                Ejercicio3();
-                break; 
-
-            case 'd':
-                Ejercicio4();
-                break;
-                
-            default:
-            System.out.println("Gracias por jugar");
-
-        }
-    }
-
-    public void Ejercicio1(){
-        /*
-        la calculadora sera maizoro suma resta multicion y division
-        */
-
-        double numero1 = 0.00, suma = 0.00, multi = 1.00;
-        char operacion;
-
-        System.out.println("Selecciona la operacion que deseas realizar:");
-        System.out.println("a. Suma y Resta");
-        System.out.println("b. Multiplicacion");
-        System.out.println("c. Divisiòn");
-
-        operacion = entrada.next().charAt(0);
-
-        switch (operacion) {
-            case 'a':
-            //suma y resta
-            do{
-                //meter tantos numeros como quieras sumar o restar hasta que ponga 0
-                System.out.println("Para detener la operacion precione 0");
-                System.out.println("Escriba los numeros que desee sumar o restar");
-                numero1 = entrada.nextDouble();
-
-                suma += numero1;
-                //suma = suma + numero1;
-                
-            }while(numero1 != 0);
-
-            System.out.println("El resultado es: " + suma);
-
-            break;
-
-        case 'b' :
-        do{
-            System.out.println("Para detener la operacion digite 0");
-            System.out.println("Escriba los numeros que desee multiplicar:");
-            numero=entrada.nextDouble();
-
-            if(numero1 > 0){
-                multi *=nuemro1;
-            }else{
-                System.out.println("Error solo con positivos");
-            }
-        }while(numero1 != 0);
-        System.out.println("El resultado es: " + multi);
-
-        break;
+        //variables
+        int edad, opcion, socio, numbinario, total, numerototal, n, a, b;
+        int positivos = 0;
+        int negativos = 0;
+        double precio, bono;
+        char letras, operacion;
+        float precios = 0;
+        float resultado = 0;
+        int cantidad = 0; 
+        String binario = "";
 
 
-    case 'c' :
-    
-        double r, aux, aux2;
-        int aux3 = 0;
+        //cuerpo del programa
+
+        //menu de las opciones de arriba
 
         do{
-            System.out.println("Ingresa el dividendo: ");
-            aux = entrada.nextDouble();
-            //do
-            System.out.println("Ingresa el divisor");
-            //deben de hacer la modificacion para poder leer que no se 0 y que vuelva a solicitar el divisor 
-            aux2 = entrada.nextDouble();
-            //condicion
 
-            r = aux/aux2;
+        System.out.println("Bienvenido a tu primer programa de estructuras.");
+        System.out.println("Por favor elija la opcion deseada:");
+        System.out.println("1.- Descuento por edad");
+        System.out.println("2.- Convertir numero decimal a binario");
+        System.out.println("3.- Conversiones de temperatura");
+        System.out.println("4.- Numeros positivos y negativos");
+        System.out.println("5.- Tienda");
+        System.out.println("6.- Area y Perimetros");
+        System.out.println("7.- Tabla");
+        System.out.println("8.- Factorial");
+        System.out.println("9.- Dibujos de codigo");
+        System.out.println("10.- Figura Hueca");
+        System.out.println("11.- Patrones de codigo");
+        System.out.println("12.- Diamente");
+        System.out.println("13.- Calculadora");
+        System.out.println("14.- Salir");
 
-            System.out.println("El resultado es: "+ r);
-            
-        }while(aux3 != 0);
-        break;
+        //condicion switch para el menu
 
-     default:
-         System.out.println("Opcion no valida. ayos");
-         break;
-    
-    }
-}
-public void Ejercicios2(){
-    /*
-    Vamos a crear un programa que convierta de:
-    metros a cm y pulgadas
-    kg a libras y gramos
-    m/s a km/s
-    */
-
-    double metros = 0.00, kilogramos = 0.00, velocidad = 0.00, cm = 100.00, pulgadas = 39.37, gramos = 1000.00, libra = 2.20, ms = 0.00; 
-    double a, b;
-    System.out.println("Selecione la cantida que desee convertir: ");
-    System.out.println("a. Metros a cm y pulgadas");
-    System.out.println("b. Kilogramos a libras y gramos");
-    System.out.println("c. m/s a km/h");
-
-    op = entrada.next().charAt(0);
-
-    switch (op) {
-        case 'a':
-        System.out.println("Ingrese los metros: ");
-        metros = entrada.nexDouble();
-        //metros a cm
-        a = metros*cm;
-        //metros a pulgadas
-        b = metros*pulgada;
-
-        System.out.println("L a cantidad en metros es: " + metros + " de m a cm son : " + a
-        + " de m a pulgadas son: "+ b);
-        break;
-
-        case 'b':
-            System.out.println("Ingrese los kilogramos: ");
-            kilogramos = entrada.nextDouble();
-            //kg a g
-            a = kilogramos*gamos;
-            //kg a lbs
-            b = kilogramos*libra;
-
-            System.out.println("La cantidad en kilogramos es: " + kilogramos + " de kg a g son : " +a
-            + " de kg a libras son: "+b);
+        opcion = entrada.nextInt();
 
 
-            break;
+        switch(opcion){
 
-        case 'c':
-            System.out.println("Ingrese la velicidad en m/s: ");
-            ms = entrada.nextDouble();
-            //ms akm/h
-            a = ms*(3600/1000);
-
-
-            System.out.println("La conversion de m/s a km/h es de : " + a);
-
-            break;
-
-        default:
-            System.out.println("Opcion no valida");
-            break;
-    }
-
-
-}
-
-public void ejercicio3(){
-    /*
-    Vamos a realizar un programa que se encarga de imprimir con *
-    un cuadro de maximo 1000 de dimension
-    */
-
-    int n, m=0;
-
-    do{
-        System.out.println("Ingrese el numero de asteriscos que desea que tenga el cuadro: ");
-        n = entrada.nextInt();
-
-        //no debe de estar entre 1 y mil
-        if( n<0 || n>1000){
-            System.out.println("El cuadro no acepta ni negativos ni mayores a 1000");
-        }else{
-            //cuando si esta en el rango
-            for(int i = 1; i<n; i ++){
-                System.out.println("*");
-            }
-            System.out.println();
-
-            for(int i = 0; i< n-2; i++){
-                System.out.println("*");
-                for(int j = 0; j < n-2; j++){
-                    System.out.println(" ");
+            case 1: //problema 1
+                System.out.println("Ingresa el Bono A cobrar");
+                bono = entrada.nextDouble();
+                System.out.println("Ingresa la edad");
+                edad = entrada.nextInt();
+                //la estructura de condiciones
+                // SI ÉSTA ES MAYOR DE 65, AL PRECIO DEL ABONO SE LE APLICA UN DESCUENTO DEL 40%.
+                if(edad >= 65){
+                    //proceso
+                    bono = bono*.6;
+                    System.out.println("Su descuento es de 40%");
+                    System.out.println("El total a pagar es de: " + bono);
                 }
-                System.out.println("*");
-            }
+                /*
+                SI LA EDAD ES MENOR QUE 21, SE PREGUNTA AL USUARIO SI SUS PADRES SON 
+                 SOCIOS. SI LA RESPUESTA ES AFIRMATIVA, SE LES APLICA UN DESCUENTO DEL 
+                45%; EN CASO CONTRARIO, SE LES APLICA UN 25%. 
+                */ 
+                if(edad <= 21){
+                    System.out.println("Si tus padres son socios ingresa 1, sino lo son ingresa 2");
+                    socio = entrada.nextInt();
 
-            for(int i = 0; i< n-2; i++){
-                System.out.println("*");
-            }
-            System.out.println();
+                    switch(socio){
+                        case 1: 
+                            bono = bono*.55;
+                            System.out.println("Su descuento fue del 45%");
+                            System.out.println("El total a pagar es de: " +bono);
+                            break;
+                        case 2: 
+                            bono = bono*.75;
+                            System.out.println("Su descuento fue del 25%");
+                            System.out.println("El total a pagar es de: " +bono);
+                            break;
+                        default:
+                        //es el caso por defecto osea los demas casos
+                            System.out.println("Opcion no valida");
+
+                    }
+                }
+                System.out.println("Tu edad es de: " + edad);
+                System.out.println("El total a pagar es: " + bono);
+                break;
+
+                case 2:
+
+                    System.out.println("Ingrese un numero positivo entero que desee convertir a binario");
+                    numbinario = entrada.nextInt();
+                    /*
+                    Tengo que comprobar que sea positivo?
+                    condicion donde numbinario > 0
+                    entonces aplico el algoritmo de convertir a binario
+                    sino no se puede convertir
+                    */ 
+
+                    if(numbinario > 0){
+                        /*
+                        Como el algoritmo para convertir un numero decimal en binario
+                        aplicar al numbinario mod 2
+                        */
+                        while(numbinario > 0){
+                            if(numbinario % 2 == 0){
+                                binario = "0" + binario;
+                            }else{
+                                binario = "1" + binario;
+                            }
+                            numbinario = (int)numbinario / 2;
+                        }
+                    }else if (numbinario == 0){
+                        binario = "0";
+                    }else{
+                        binario = "No se pudo convertir el numero, ingrese solo positivos.";
+                    }
+                    System.out.println("El numero convertirdo a binario es: " + binario);
+                    break;
+
+
+                case 3:
+                    //tarea
+
+                case 4:
+
+                    /*
+                    Un numero positivo y un num negativo
+                    entonces para poder identificar si un numero positivo o negativo
+                    debo de poder diferenciar si es 
+                    num > 0
+                    */ 
+
+                    System.out.println("Inserte ¿cuantos numeros va a ingresar?");
+                    total = entrada.nextInt();
+
+                    do{
+                        System.out.println("Inserte el numero");
+                        numerototal = entrada.nextInt();
+
+                        //condicion
+                        if(numerototal == 0){
+                            //contar cuantos positivos hubo
+                            //vamos a ir acumulando el numero de positivos
+                            positivos = positivos + 0;
+
+                        }else{
+                            if(numerototal > 0){
+                                positivos = positivos +1;
+                            }else{
+                                negativos = negativos +1;
+                            }
+                        }
+
+                        //saber el total
+                        total = total-1;
+
+
+
+                    }while(total != 0);
+
+                    System.out.println("El total de positivos es: "+ positivos);
+                    System.out.println("El total de negativos es: "+ negativos);
+
+                    break;
+
+                case 5:
+                    System.out.println("¿Cuantos elementos vas a ingresar?");
+                    total = entrada.nextInt();
+
+                    for(int i = 1; i <= total; i++){
+                        System.out.println("Ingresa el Precio producto");
+                        precios = entrada.nextFloat();
+                        System.out.println("Ingresa el Cantidad del Producto");
+                        cantidad = entrada.nextInt();
+
+                        resultado = precios * cantidad;
+                    }
+
+                    System.out.println("El resultado es: " + resultado);
+
+                case 6:
+                    //tarea
+
+                case 7: 
+                    for(n = 1; n<= 10; n++){
+                        System.out.println(n + " " + (n*10)+ " " + (n*100) + " " + (n*1000));
+                    }
+                    break;
+
+                case 8:
+                    //tarea de ustedes
+                    /*
+                    introduce el digito
+                    for (num ; iterador >0; i--)
+                    factorial = factorial * iterador
+                    
+                    
+                    while(num == 1){
+                        factorial = factorial - 1
+                    }
+                    */ 
+
+                case 9:
+                    /*
+                    ESCRIBA UN PROGRAMA QUE LEA EL LADO DE UN CUADRADO Y A CONTINUACIÓN LO IMPRIMA 
+                    EN FORMA DE ASTERISCOS SU PROGRAMA DEBERa PODER FUNCIONAR PARA CUADRADOS 
+                    DE TODOS TAMAÑOS ENTRE 1 Y 20. 
+                    */
+
+                    System.out.println("Cuadrado Magico");
+                    System.out.println("Inserta el num de lados: ");
+                    n = entrada.nextInt();
+
+                    if( n>= 1 && n <=20){
+                        //se puede imprimir
+                        //aqui tengo las filas
+                        for(int i = 1; i<=n; i++){
+                            //columnas
+                            for(int j = 1; j<=n; j++){
+                                System.out.print("* ");
+
+                            }
+                        System.out.println(" ");
+
+
+                            
+                        }
+                    }else{
+                        System.out.println("Error, el rango debe de ser entre 1 y 20, intente de nuevo");
+                    }
+
+                    break;
+
+
+
+                case 10:
+
+                    System.out.println("Cuadrado Magico Hueco (Como tu ex asi dejo tu kokoro wiiii)");
+                    System.out.println("Inserta el num de lados: ");
+                    n = entrada.nextInt();
+
+                    if( n>= 1 && n <=20){
+                        //se puede imprimir
+
+                        //imprima la linea superior
+                        for(int i = 0; i < n; i++){
+                            System.out.print(" * ");
+                        }
+                        System.out.println();
+
+                        //lo de enmedio solo quiero las esquinas
+                        //cuadrado interno
+                        //aqui tengo las filas
+                        for(int i = 0; i < n-2; i++){
+                            System.out.print(" * ");
+                            //columnas
+                            for(int j = 0; j < n-2; j++){
+                                System.out.print("  ");
+
+                            }
+                        System.out.println("   * ");
+
+
+                            
+                        }
+
+                        //imprimir la linea inferior
+                        for(int i = 0; i < n; i++){
+                            System.out.print(" * ");
+                        }
+                        System.out.println();
+                    }else{
+                        System.out.println("Error, el rango debe de ser entre 1 y 20, intente de nuevo");
+                    }
+
+                    break;
+
+                case 11:
+                    //tarea
+
+                case 12:
+                    //tarea
+
+                case 13:
+
+                    System.out.println("Calculadora maizsoro");
+                    System.out.println("Ingresar un número");
+                    a = entrada.nextInt();
+                    System.out.println("Ingresa un segundo número");
+                    b = entrada.nextInt();
+                    System.out.println("Ingresa el tipo de operacion que deseas realizar : (+ , -, *, /)");
+                    operacion = entrada.next().charAt(0);
+
+                    /*
+                    switch 
+                        case +
+                        case -
+                        case *
+                        case /
+                    */ 
+
+                    switch(operacion){
+                        case '+' :
+                            resultado = a+b;
+                            System.out.println("La suma es de: " + resultado);
+                            break;
+                        case '-' :
+                            resultado = a-b;
+                            System.out.println("La resta es de: " + resultado);
+                            break;
+                        case '*' :
+                            resultado = a*b;
+                            System.out.println("La multiplicación es de: " + resultado);
+                            break;
+                        case '/' :
+                            if(b != 0){
+                                resultado = a/b;
+                                System.out.println("La división es de: " + resultado);
+                               
+                            }else{
+                                System.out.println("No es posible dividir entre 0");
+                            }
+                            break;
+                        default :
+                            System.out.println("Operación no valida");
+
+                    }
+
+                default:
+                    System.out.println("Gracias por ver este hermoso programa :3");
+
+
 
         }
-        //salir de ese bucle infinito : 3 que se quiebren la cabezita un ratito
+    
+        System.out.println("¿Deseas repetir el programa? Si lo desea escriba s");
+        /*
+            para recibir la respuesta debo de obtener un caracter s
+            para cuando se reciben char se utiliza ''
+            para cuando se reciben String se utiliza ""
+        */ 
+    
+        letras = entrada.next().charAt(0);
+    
+        //si el usuario ingresa si  solo detecto la s  es la posicion del caracter que queremos lee
+    
+    
+    
+    
+    }while(letras == 's');
+    //aqui se cierra el do
 
-    }while(m==0);
-}
-
-public void Ejercicio4(){
-    //
-
-    /*
-    quiero que se imprima una figura de la siguente forma:
-
-
-    ***********
-    ///////////
-    ***********
-    ///////////
-    ***********
-    ///////////
-
-    Hasta cubrir el tamaño de un cuadrado 
-    2 x 2
-
-    **
-    //
-
-
-    3 x 3
-
-    ***
-    ///
-    ***
-
-
-
-    */
-   }
    
-}
 
+    }
+
+}

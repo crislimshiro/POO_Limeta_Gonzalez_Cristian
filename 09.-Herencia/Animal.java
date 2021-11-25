@@ -49,6 +49,56 @@ public class Animal{
         this.edad = edad;
         this.sexo = sexo;
     }
+    /*
+    cuando los atributos son de tipo private:
+    debemos de acceder a los datos a traves del uso de los metodos
+    get obtener ->recibir
+    set asignar ->enviar
+    */
+    //recibir
+    public String getNombre(){
+        return nombre;
+    }
 
+    //enviar
+    public void setNombre(){
+        this.nombre = Nombre;
+    }
+    //recivir
+    public String getRaza(){
+        return raza;
+    }
+
+    //enviar
+    public void setRaza(){
+        this.raza = Raza;
+    }
+     //recivir
+     public String getTipo_alimento(){
+        return raza;
+    }
+
+    //enviar
+    public void setTipo_alimento(){
+        this.tipo_alimento = Tipo_alimento;
+    }
+    //recivir
+    public int getEdad(){
+        return edad;
+    }
+
+    //enviar
+    public void setEdad(){
+        this.edad = Edad;
+    }
+    //recibir
+    public Boolean getSexo(){
+        return Sexo;
+    }
+
+    //enviar
+    public void setSexo(){
+        this.Sexo = sexo;
+    }
 
 }

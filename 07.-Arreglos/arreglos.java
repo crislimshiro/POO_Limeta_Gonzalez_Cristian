@@ -12,7 +12,7 @@ public class Arreglos{
         Scanner sc=new Scanner(System.in);
         while(i<=10){
             
-            System.out.println("Intrudizca una calificación del 0 al 10: ");
+            System.out.println("Introducir promedio de los alumnos del 0 al 10: ");
             calif=sc.nextFloat();
             if(Calif >= 9 && calif <= 10){
                 excelentes++;

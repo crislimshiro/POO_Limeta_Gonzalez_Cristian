@@ -11,7 +11,7 @@ num1 num2 resultado
 //vamos a ocupar la libreria Scanner que nos sirve para obtener la entrada de datos
 
 import java.util.Scanner;
-import java.util.Math;
+import java.lang.Math;
 
 class sumadedosnumeros{
 
