@@ -124,4 +124,4 @@ class Empleados{
         return 0;
     }
 
-         
+}
