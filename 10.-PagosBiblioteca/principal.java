@@ -5,7 +5,7 @@ los pagos de los libros atrasados de la biblioteca
 
 */
 
-
+º
 //libreria
 import java.util.Scanner;
 import javax.swing.JOotionPane;
@@ -89,5 +89,5 @@ public class Principal{
 
 
 
-    
+
 }
